@@ -6,6 +6,7 @@
     A decentralized end-to-end encrypted data storage & sharing platform
     <br><br>
     <a href="https://debox.network/">https://debox.network</a>
+    <br>
 </h3>
 
 This repository is the public distribution point for Debox. Releases are published via [GitHub

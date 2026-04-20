@@ -8,10 +8,12 @@
     <a href="https://debox.network/">https://debox.network</a>
 </h3>
 
-This repository is the public distribution point for Debox. Releases are published via GitHub Releases. Each release
-entry below lists included components, their versions, and links to their `CHANGELOG.md`.
+This repository is the public distribution point for Debox. Releases are published via [GitHub
+Releases][latest], where you can download the latest release assets for your platform.
 
-## [v0.1.0] - 2026-04-20
+Each release entry below lists included components, their versions, and links to their `CHANGELOG.md` files.
+
+## [v0.1.0] - 2026-04-21
 
 ### Components
 
@@ -20,6 +22,7 @@ entry below lists included components, their versions, and links to their `CHANG
 - [debox-cli v0.2.0][debox-cli-changelog]
 - [FSKitBridge v0.2.0][fskitbridge-changelog]
 
+[latest]: ../../releases/latest
 [v0.1.0]: ../../releases/tag/v0.1.0
 [debox-changelog]: /debox-network/debox/blob/main/CHANGELOG.md
 [debox-gui-changelog]: /debox-network/debox-gui/blob/main/CHANGELOG.md

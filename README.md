@@ -24,7 +24,7 @@ Each release entry below lists included components, their versions, and links to
 #### Linux (`.deb`)
 
 ```bash
-sudo apt install ./debox_<version>_<arch>.deb
+sudo apt install ./debox_<version>_linux_<arch>.deb
 ```
 
 #### macOS (`.dmg`)

@@ -85,20 +85,21 @@ Remove user data:
 %LocalAppData%\Debox
 ```
 
+# Changelog
+
 ## [v0.1.0] - 2026-04-21
 
 ### Components:
 
-- [deboxd v0.2.0][debox-changelog]
-- [debox-gui v0.1.0][debox-gui-changelog]
-- [debox-cli v0.2.0][debox-cli-changelog]
-- [kubo v0.40.1][kubo-changelog]
-- [FSKitBridge v0.2.0][fskitbridge-changelog]
+- Debox - [debox v0.2.0][debox-changelog]
+- Debox GUI - [debox-gui v0.1.0][debox-gui-changelog]
+- Debox CLI - [debox-cli v0.2.0][debox-cli-changelog]
+- IPFS Kubo - [kubo v0.40.1][kubo-changelog]
+- FSKitBridge - [FSKitBridge v0.2.0][fskitbridge-changelog]
 
 [latest]: ../../releases/latest
-
 [v0.1.0]: ../../releases/tag/v0.1.0
-[debox-changelog]: changelogs/deboxd.md
+[debox-changelog]: changelogs/debox.md
 [debox-gui-changelog]: changelogs/debox-gui.md
 [debox-cli-changelog]: changelogs/debox-cli.md
 [kubo-changelog]: https://github.com/ipfs/kubo/blob/v0.40.1/docs/changelogs/v0.40.md

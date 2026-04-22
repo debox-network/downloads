@@ -85,7 +85,7 @@ Remove user data:
 %LocalAppData%\Debox
 ```
 
-# Changelog
+## Changelog
 
 ## [v0.1.0] - 2026-04-21
 

@@ -2,7 +2,43 @@
 
 ## [Unreleased]
 
+## [v0.3.0] - 2026-05-22
+
+### common
+- **Changed:** Unix mount paths now resolve under the user's home directory.
+- **Changed:** Moved more configuration ownership into the modules that define each runtime
+  section.
+
+### daemon
+- **Changed:** Updated daemon runtime wiring for the refactored peer and service modules.
+
+### drive
+- **Fixed:** Improved platform drive backends to respect filesystem/share access boundaries.
+
+### fs
+- **Changed:** Improved tree lookup, readonly handling, and file operation behavior around
+  copy, move, remove, and metadata flows.
+- **Fixed:** Enforced share boundaries in filesystem operations and CRDT synchronization.
+
+### ipfs
+- **Added:** Cache-oriented IPFS helpers, including DAG export and retry support for fetching
+  data through the cache path.
+- **Changed:** Improved Kubo startup, peer configuration, routing provide, name publish, and
+  network reachability handling.
+
+### peer
+- **Added:** Debox Cache upload flow for making keeper-published content available through Mesh.
+- **Added:** Keeper-side Mesh auth, probe, relay reservation, and event-driven identity publish
+  flow.
+- **Changed:** Reworked keeper runtime logic and split share handling into focused keeper modules.
+- **Fixed:** Improved direct and relay dialing, relay address publication, identity retry behavior,
+  and client connection logging.
+
+### webdav
+- **Changed:** Updated WebDAV runtime wiring and dependency versions.
+
 ## [v0.2.0] - 2026-04-21
+
 ### common
 - **Added:** Shared runtime infrastructure for configuration, process execution, clocks, path
   resolution, and embedded key-value storage.
@@ -33,7 +69,7 @@
   flow.
 - **Fixed:** Better startup, shutdown, timeout, initialization, and peer-side error reporting.
 
-### protocol
+### peer
 - **Added:** Expanded keeper/client workflows for share creation, invites, passes, members, push,
   and pull flows.
 - **Changed:** Reworked session, identity, local store, role/action, and connection handling for
@@ -52,6 +88,7 @@
 
 - Initial release of **debox**. See details in the [README](README.md).
 
-[Unreleased]: ../../compare/v0.2.0...HEAD
+[Unreleased]: ../../compare/v0.3.0...HEAD
+[v0.3.0]: ../../releases/tag/v0.3.0
 [v0.2.0]: ../../releases/tag/v0.2.0
 [v0.1.0]: ../../releases/tag/v0.1.0

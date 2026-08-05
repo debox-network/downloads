@@ -2,6 +2,62 @@
 
 ## [Unreleased]
 
+## [v0.4.0] - 2026-08-05
+
+### common
+
+- **Added:** Unified typed operation storage with deduplication, shared HLC metadata, and ordered
+  replay.
+- **Added:** Versioned operation snapshots with bounded retention.
+
+### daemon
+
+- **Added:** Exposed RPC commands for version activation and recovery, version remove/restore,
+  share leave, invite remove/restore, and member management.
+
+### fs
+
+- **Added:** Complete checkpoint lifecycle with activate, activate-my, remove, remove-all, and
+  restore commands.
+- **Added:** Version metadata now reports the resolved author, `is_me`, removal state, and the
+  current local version.
+- **Added:** Explicit overwrite and replace controls for filesystem operations.
+- **Changed:** Local versions are persisted immediately and pinned through the background IPFS
+  scheduler.
+- **Fixed:** Avoided duplicate checkpoints when the current content is already saved.
+- **Fixed:** Enforced read-only share boundaries and validated parent trees for create, copy, and
+  move operations.
+- **Fixed:** Improved current-version resolution, recursive directory creation, cache fetches, and
+  stale operation replay.
+
+### ipfs
+
+- **Added:** A daemon-aware background pin scheduler with deduplication, bounded concurrency, and
+  retry backoff.
+- **Added:** Bounded recovery for content fetches stalled by stale provider/Bitswap connections.
+- **Changed:** Pinning now starts only while the managed Kubo daemon is running and is paused on
+  daemon stop or unexpected exit.
+- **Fixed:** Serialized Kubo lifecycle transitions with pin scheduler state changes.
+
+### peer
+
+- **Added:** Operation-backed client and keeper state with snapshots, pull inboxes, and per-action
+  watermarks.
+- **Added:** Member role, shared-name, local-alias, remove, restore, and self-leave workflows.
+- **Added:** Invite remove/restore and automatic invite pass acceptance.
+- **Changed:** Share push and pull now synchronize filesystem and control operations through the
+  unified operation model.
+- **Changed:** Pass synchronization runs in the background and preserves failed submission status.
+- **Fixed:** Improved concurrent push behavior, permission-change handling, credential refresh,
+  owner bootstrap, share leave finalization, and missing-share reporting.
+- **Fixed:** Prevented owner role changes and synchronized filesystem write access with active
+  share membership.
+
+### docs
+
+- **Added:** Architecture, filesystem, share synchronization, project decision, and IPFS recovery
+  documentation.
+
 ## [v0.3.0] - 2026-05-22
 
 ### common
@@ -88,7 +144,8 @@
 
 - Initial release of **debox**. See details in the [README](README.md).
 
-[Unreleased]: ../../compare/v0.3.0...HEAD
+[Unreleased]: ../../compare/v0.4.0...HEAD
+[v0.4.0]: ../../releases/tag/v0.4.0
 [v0.3.0]: ../../releases/tag/v0.3.0
 [v0.2.0]: ../../releases/tag/v0.2.0
 [v0.1.0]: ../../releases/tag/v0.1.0

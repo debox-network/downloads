@@ -8,8 +8,8 @@
     <a href="https://debox.network/">https://debox.network</a>
 </h3>
 
-This repository is the public distribution point for Debox. Releases are published via [GitHub
-Releases][latest], where you can download the latest release assets for your platform.
+This repository is the public distribution point for Debox. Releases are published via [GitHub Releases][latest], where
+you can download the latest release assets for your platform.
 
 Each release entry below lists included components, their versions, and links to their `CHANGELOG.md` files.
 
@@ -87,6 +87,17 @@ Remove user data:
 
 ## Changelog
 
+## [v0.3.0] - 2026-08-11
+
+### Components:
+
+- Debox - [debox v0.4.0][debox-changelog]
+- Debox GUI - [debox-gui v0.2.0][debox-gui-changelog]
+- Debox CLI - [debox-cli v0.3.0][debox-cli-changelog]
+- IPFS Kubo - [kubo v0.43.0][kubo-changelog]
+- FSKitBridge - [FSKitBridge v0.2.0][fskitbridge-changelog]
+- Dokany - [Dokany v2.3.1.1000][dokany-changelog]
+
 ## [v0.2.0] - 2026-05-22
 
 ### Components:
@@ -110,6 +121,7 @@ Remove user data:
 - Dokany - [Dokany v2.3.1.1000][dokany-changelog]
 
 [latest]: ../../releases/latest
+[v0.3.0]: ../../releases/tag/v0.3.0
 [v0.2.0]: ../../releases/tag/v0.2.0
 [v0.1.0]: ../../releases/tag/v0.1.0
 [debox-changelog]: changelogs/debox.md

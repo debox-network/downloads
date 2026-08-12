@@ -2,6 +2,22 @@
 
 ## [Unreleased]
 
+## [v0.3.0] - 2026-08-11
+
+### Added
+
+- Added share leave and invite/member remove and restore commands.
+- Added file version activation, removal, and restoration.
+- Added overwrite and replace options for file transfers.
+
+### Changed
+
+- Updated member management and metadata output for the latest API.
+
+### Removed
+
+- Removed the unsupported `pass remove` command.
+
 ## [v0.2.0] - 2026-04-21
 
 ### Added
@@ -19,6 +35,7 @@
 
 - Initial release of **debox-cli**. See details in the [README](README.md).
 
-[Unreleased]: ../../compare/v0.2.0...HEAD
+[Unreleased]: ../../compare/v0.3.0...HEAD
+[v0.3.0]: ../../releases/tag/v0.3.0
 [v0.2.0]: ../../releases/tag/v0.2.0
 [v0.1.0]: ../../releases/tag/v0.1.0

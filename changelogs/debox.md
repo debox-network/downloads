@@ -2,7 +2,7 @@
 
 ## [Unreleased]
 
-## [v0.4.0] - 2026-08-05
+## [v0.4.0] - 2026-08-11
 
 ### common
 
@@ -14,6 +14,9 @@
 
 - **Added:** Exposed RPC commands for version activation and recovery, version remove/restore,
   share leave, invite remove/restore, and member management.
+- **Changed:** Shutdown now rejects new commands, drains active work with bounded timeouts, and
+  coordinates cleanup of managed services.
+- **Fixed:** Shutdown failures and timeouts are now propagated to the daemon process result.
 
 ### fs
 
@@ -27,6 +30,10 @@
 - **Fixed:** Avoided duplicate checkpoints when the current content is already saved.
 - **Fixed:** Enforced read-only share boundaries and validated parent trees for create, copy, and
   move operations.
+- **Fixed:** Excluded platform-local filesystem entries and Windows alternate data streams from
+  share synchronization.
+- **Fixed:** Hardened remote operation materialization against placement conflicts and cyclic
+  parent relationships.
 - **Fixed:** Improved current-version resolution, recursive directory creation, cache fetches, and
   stale operation replay.
 
@@ -37,6 +44,9 @@
 - **Added:** Bounded recovery for content fetches stalled by stale provider/Bitswap connections.
 - **Changed:** Pinning now starts only while the managed Kubo daemon is running and is paused on
   daemon stop or unexpected exit.
+- **Changed:** The pin scheduler reloads Kubo's recursive pinset after resume and skips content
+  that is already pinned.
+- **Changed:** Managed Kubo configuration disables anonymous telemetry and peer event logging.
 - **Fixed:** Serialized Kubo lifecycle transitions with pin scheduler state changes.
 
 ### peer
@@ -53,10 +63,17 @@
 - **Fixed:** Prevented owner role changes and synchronized filesystem write access with active
   share membership.
 
+### webdav
+
+- **Changed:** WebDAV now owns platform-specific mount handling and performs bounded connection
+  draining during shutdown.
+
 ### docs
 
 - **Added:** Architecture, filesystem, share synchronization, project decision, and IPFS recovery
   documentation.
+- **Added:** An architecture backlog for deferred filesystem synchronization and CRDT convergence
+  issues.
 
 ## [v0.3.0] - 2026-05-22
 

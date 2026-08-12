@@ -8,8 +8,8 @@
     <a href="https://debox.network/">https://debox.network</a>
 </h3>
 
-This repository is the public distribution point for Debox. Releases are published via [GitHub
-Releases][latest], where you can download the latest release assets for your platform.
+This repository is the public distribution point for Debox. Releases are published via [GitHub Releases][latest], where
+you can download the latest release assets for your platform.
 
 Each release entry below lists included components, their versions, and links to their `CHANGELOG.md` files.
 
@@ -87,7 +87,7 @@ Remove user data:
 
 ## Changelog
 
-## [v0.3.0] - 2026-08-05
+## [v0.3.0] - 2026-08-11
 
 ### Components:
 

@@ -2,7 +2,7 @@
 
 ## [Unreleased]
 
-## [v0.2.0] - 2026-08-05
+## [v0.2.0] - 2026-08-11
 
 ### Added
 
@@ -20,6 +20,8 @@
   operations.
 - Load access and version data on demand and guard panels against stale async
   results.
+- Shut down the daemon gracefully when closing the GUI or pressing `Ctrl+C`.
+- Hide platform-specific system entries from Explorer.
 
 ### Fixed
 
@@ -27,6 +29,9 @@
 - Improve daemon, Keeper, share sync, and pass-status error handling.
 - Keep access and version panels consistent after sync, refresh, permission
   changes, and file navigation.
+- Restore compatibility with the current daemon API and handle symbolic links
+  as files.
+- Synchronize newly joined shares immediately after their passes are accepted.
 
 ## [v0.1.1] - 2026-05-22
 

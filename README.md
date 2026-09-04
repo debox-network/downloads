@@ -3,45 +3,58 @@
 </p>
 
 <h3 align="center">
-    A decentralized end-to-end encrypted data storage & sharing platform
+    A decentralized, end-to-end encrypted drive for storing, syncing, and sharing your data
     <br><br>
     <a href="https://debox.network/">https://debox.network</a>
 </h3>
 
-This repository is the public distribution point for Debox. Releases are published via [GitHub Releases][latest], where
-you can download the latest release assets for your platform.
+This repository is the public distribution point for Debox. Download the latest release assets for your platform from
+[GitHub Releases][latest].
 
-Each release entry below lists included components, their versions, and links to their `CHANGELOG.md` files.
+> [!WARNING]
+> **Debox is alpha software intended for testing and evaluation.**
+>
+> Features may be incomplete, bugs and security vulnerabilities may exist, and future releases may introduce breaking
+> changes or require resetting local data.
+>
+> Keep independent backups of data stored in Debox during the alpha period.
+>
+> The software is provided as is, without guarantees of stability, compatibility, or performance. By using Debox, you
+> accept these risks.
 
-### Minimum OS Requirements
+## Usage Guide
+
+Watch the [Debox video guide][video-guide] for a walkthrough of the application.
+
+## Minimum OS Requirements
 
 - Ubuntu 24.04 LTS
 - macOS 15.4
 - Windows 11
 
-### Installation
+## Installation
 
-#### Linux (`.deb`)
+### Linux (`.deb`)
 
 ```bash
-sudo apt install ./debox_<version>_linux_<arch>.deb
+sudo apt install ./debox_0.4.0_linux_amd64.deb
 ```
 
-#### macOS (`.dmg`)
+### macOS (`.dmg`)
 
 1. Open the downloaded `.dmg` file.
-2. Move `Debox.app` to `Applications`.
-3. Start Debox from `Applications`.
+2. Drag `Debox.app` to the `Applications` folder.
+3. Start Debox from the `Applications` folder.
 
-#### Windows (`.exe`)
+### Windows (`.exe`)
 
 1. Run the downloaded installer.
 2. Follow the setup steps.
-3. If needed, allow the bundled Dokany prerequisite to be installed during setup.
+3. Allow the installer to install Dokany if prompted.
 
-### Uninstall
+## Uninstall
 
-#### Linux
+### Linux
 
 Remove the application:
 
@@ -49,7 +62,7 @@ Remove the application:
 sudo apt remove debox
 ```
 
-Remove package-managed files:
+Remove the application and its package configuration:
 
 ```bash
 sudo apt purge debox
@@ -61,7 +74,7 @@ Remove user data:
 rm -rf ~/.local/share/debox
 ```
 
-#### macOS
+### macOS
 
 Remove the application:
 
@@ -75,21 +88,34 @@ Remove user data:
 rm -rf ~/Library/Application\ Support/Debox
 ```
 
-#### Windows
+### Windows
 
-Remove the application from Settings -> Apps -> Installed apps, or run the Debox uninstaller.
+Remove the application from Settings > Apps > Installed apps, or run the Debox uninstaller.
 
-Remove user data:
+Remove user data with PowerShell:
 
-```text
-%LocalAppData%\Debox
+```powershell
+Remove-Item -Recurse -Force "$env:LOCALAPPDATA\Debox"
 ```
 
 ## Changelog
 
-## [v0.3.0] - 2026-08-11
+Each release entry lists included components, their versions, and links to their `CHANGELOG.md` files.
 
-### Components:
+### [v0.4.0] - 2026-09-03
+
+#### Components
+
+- Debox - [debox v0.5.0][debox-changelog]
+- Debox GUI - [debox-gui v0.2.1][debox-gui-changelog]
+- Debox CLI - [debox-cli v0.4.0][debox-cli-changelog]
+- IPFS Kubo - [kubo v0.43.0][kubo-changelog]
+- FSKitBridge - [FSKitBridge v0.2.0][fskitbridge-changelog]
+- Dokany - [Dokany v2.3.1.1000][dokany-changelog]
+
+### [v0.3.0] - 2026-08-11
+
+#### Components
 
 - Debox - [debox v0.4.0][debox-changelog]
 - Debox GUI - [debox-gui v0.2.0][debox-gui-changelog]
@@ -98,9 +124,9 @@ Remove user data:
 - FSKitBridge - [FSKitBridge v0.2.0][fskitbridge-changelog]
 - Dokany - [Dokany v2.3.1.1000][dokany-changelog]
 
-## [v0.2.0] - 2026-05-22
+### [v0.2.0] - 2026-05-22
 
-### Components:
+#### Components
 
 - Debox - [debox v0.3.0][debox-changelog]
 - Debox GUI - [debox-gui v0.1.1][debox-gui-changelog]
@@ -109,9 +135,9 @@ Remove user data:
 - FSKitBridge - [FSKitBridge v0.2.0][fskitbridge-changelog]
 - Dokany - [Dokany v2.3.1.1000][dokany-changelog]
 
-## [v0.1.0] - 2026-04-21
+### [v0.1.0] - 2026-04-21
 
-### Components:
+#### Components
 
 - Debox - [debox v0.2.0][debox-changelog]
 - Debox GUI - [debox-gui v0.1.0][debox-gui-changelog]
@@ -120,7 +146,9 @@ Remove user data:
 - FSKitBridge - [FSKitBridge v0.2.0][fskitbridge-changelog]
 - Dokany - [Dokany v2.3.1.1000][dokany-changelog]
 
+[video-guide]: https://youtu.be/z3QGAdwM3Ec
 [latest]: ../../releases/latest
+[v0.4.0]: ../../releases/tag/v0.4.0
 [v0.3.0]: ../../releases/tag/v0.3.0
 [v0.2.0]: ../../releases/tag/v0.2.0
 [v0.1.0]: ../../releases/tag/v0.1.0

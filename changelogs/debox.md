@@ -1,8 +1,60 @@
 # Changelog
 
-## [Unreleased]
+## v0.5.0 - 2026-09-03
 
-## [v0.4.0] - 2026-08-11
+### common
+
+- **Added:** Structured error parsing that preserves numeric codes and messages across RPC and
+  Keeper responses.
+- **Fixed:** System timestamps before the Unix epoch are normalized without a panic.
+
+### daemon
+
+- **Added:** RPC commands for Share and Pass information and remote Keeper connectivity checks.
+- **Changed:** Keeper information now reports its lifecycle, availability, stable identifier, and
+  published identity separately.
+- **Changed:** Command failures now use structured error information instead of parsing formatted
+  error strings.
+- **Changed:** Restore commands were removed after checkpoint and Invite removal became permanent.
+
+### fs
+
+- **Changed:** Committed versions and checkpoints are represented independently; checkpoint
+  removal is now permanent.
+- **Changed:** Version synchronization preserves modification times, source imports retain their
+  source `mtime`, and current version identifiers remain stable.
+- **Fixed:** Local file changes remain protected from unrelated committed versions and fork a new
+  version before modifying committed content.
+- **Fixed:** Share leave commits pending local file versions before creating the leave boundary.
+
+### ipfs
+
+- **Fixed:** Stalled direct content reads and copies recover by reconnecting to a discovered
+  provider before retrying the request.
+
+### peer
+
+- **Added:** Signed encrypted Share envelopes with persisted per-member keys and proofs.
+- **Added:** Durable inbox/outbox synchronization with resumable push and pull progress.
+- **Added:** Keeper discovery and connectivity diagnostics with identity and last-contact details.
+- **Changed:** Invite and Pass admission encrypts requests and decisions, binds applicant keys, and
+  publishes membership atomically.
+- **Changed:** Member, Invite, and leave operations update Keeper state and encrypted Share history
+  atomically.
+- **Changed:** Keeper identity publication reports lifecycle and availability separately and uses
+  exponential retry backoff.
+- **Changed:** Invite removal is permanent, delayed Pass requests are discarded, and Keeper errors
+  use structured responses.
+- **Fixed:** Interrupted join, leave, filesystem history, push, and pull flows can resume safely.
+
+### docs
+
+- **Added:** Detailed Share encryption and admission protocol documentation.
+- **Added:** Keeper identity publication and content recovery documentation.
+- **Changed:** Consolidated repository agent guidance and expanded architecture decisions and
+  backlog documentation.
+
+## v0.4.0 - 2026-08-11
 
 ### common
 
@@ -75,7 +127,7 @@
 - **Added:** An architecture backlog for deferred filesystem synchronization and CRDT convergence
   issues.
 
-## [v0.3.0] - 2026-05-22
+## v0.3.0 - 2026-05-22
 
 ### common
 - **Changed:** Unix mount paths now resolve under the user's home directory.
@@ -110,7 +162,7 @@
 ### webdav
 - **Changed:** Updated WebDAV runtime wiring and dependency versions.
 
-## [v0.2.0] - 2026-04-21
+## v0.2.0 - 2026-04-21
 
 ### common
 - **Added:** Shared runtime infrastructure for configuration, process execution, clocks, path
@@ -157,12 +209,6 @@
 - **Added:** Expanded platform-specific helpers for mounting, Windows system operations, and OS
   integration paths.
 
-## [v0.1.0] - 2024-10-09
+## v0.1.0 - 2024-10-09
 
-- Initial release of **debox**. See details in the [README](README.md).
-
-[Unreleased]: ../../compare/v0.4.0...HEAD
-[v0.4.0]: ../../releases/tag/v0.4.0
-[v0.3.0]: ../../releases/tag/v0.3.0
-[v0.2.0]: ../../releases/tag/v0.2.0
-[v0.1.0]: ../../releases/tag/v0.1.0
+- Initial release of **debox**.
